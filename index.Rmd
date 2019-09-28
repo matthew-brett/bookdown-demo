@@ -34,3 +34,67 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+I'm also interested in Python code.
+
+```{r, echo=FALSE}
+library(reticulate)
+```
+
+```{python, opts.label='py_ed'}
+a = 1
+a
+```
+
+```{r}
+str(knitr::opts_knit$get())
+```
+
+
+
+```{R, opts.label='r_ed'}
+a <- 2
+print(a)
+```
+
+```{python, echo=FALSE}
+import matplotlib
+matplotlib.use('Agg')
+```
+
+Here is a Python plot:
+
+<!--- begin-test
+
+-->
+
+
+```{python}
+import matplotlib.pyplot as plt
+plt.plot([0, 2, 1, 4])
+plt.show()
+```
+
+A normal paragraph.
+
+(ref:foo) A scatterplot of the data `cars` using **base** R graphics.
+
+```{r foo, fig.cap='(ref:foo)'}
+plot(cars)  # a scatterplot
+```
+
+(ref:bar) Some *text*
+
+(ref:bar)
+
+We are using `r book_lang` in these examples.
+
+`r start_isr()`
+This is the R version
+`r end_isr()`
+`r start_ispy()`
+This is the Python version
+`r end_ispy()`
+
+<!--- end-test
+-->

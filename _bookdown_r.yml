@@ -3,5 +3,4 @@ language:
   ui:
     chapter_name: "Chapter "
 delete_merged_file: true
-before_chapter_script: "_common.R"
-new_session: yes
+before_chapter_script: "_r_edition.R"
