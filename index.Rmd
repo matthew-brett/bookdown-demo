@@ -62,14 +62,23 @@ import matplotlib
 matplotlib.use('Agg')
 ```
 
+(ref:bar) Some *text*
+
+(ref:bar)
+
 Here is a Python plot:
 
-<!--- begin-test
 
--->
+`r begin_nb('first')`
+`r begin_isnb()`
 
+This is some explanation about the notebook.
 
-```{python}
+It can use references: (ref:bar) - and macros: `r BL`.
+
+`r end_isnb()`
+
+```{python, opts.label="py_ed"}
 import matplotlib.pyplot as plt
 plt.plot([0, 2, 1, 4])
 plt.show()
@@ -77,22 +86,20 @@ plt.show()
 
 A normal paragraph.
 
+`r end_nb()`
+
 (ref:foo) A scatterplot of the data `cars` using **base** R graphics.
 
 ```{r foo, fig.cap='(ref:foo)'}
 plot(cars)  # a scatterplot
 ```
 
-(ref:bar) Some *text*
-
-(ref:bar)
-
 We are using `r book_lang` in these examples.
 
-`r start_isr()`
+`r begin_isr()`
 This is the R version
 `r end_isr()`
-`r start_ispy()`
+`r begin_ispy()`
 This is the Python version
 `r end_ispy()`
 
