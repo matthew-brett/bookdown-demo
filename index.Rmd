@@ -1,11 +1,11 @@
---- 
+---
 title: "A Minimal Book Example"
 author: "Yihui Xie"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
@@ -24,33 +24,21 @@ install.packages("bookdown")
 # devtools::install_github("rstudio/bookdown")
 ```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+Some Python code:
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
-
-I'm also interested in Python code.
-
-```{r, echo=FALSE}
-library(reticulate)
-```
 
 ```{python, opts.label='py_ed'}
 a = 1
 a
 ```
 
+Show the knitr options (R code):
+
 ```{r}
 str(knitr::opts_knit$get())
 ```
 
-
+An R edition chunk:
 
 ```{R, opts.label='r_ed'}
 a <- 2
@@ -66,9 +54,6 @@ matplotlib.use('Agg')
 
 (ref:bar)
 
-Here is a Python plot:
-
-
 `r begin_nb('first')`
 `r begin_isnb()`
 
@@ -76,7 +61,11 @@ This is some explanation about the notebook.
 
 It can use references: (ref:bar) - and macros: `r BL`.
 
+Here is a citation for @xie2015.
+
 `r end_isnb()`
+
+Maybe citations such as @xie2015.
 
 ```{python, opts.label="py_ed"}
 import matplotlib.pyplot as plt
